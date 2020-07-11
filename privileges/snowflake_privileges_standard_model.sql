@@ -66,6 +66,7 @@ grant usage, read on future stages in database db_1 to role reader_db_1;
 grant usage on future file formats in database db_1 to role reader_db_1;
 grant select on future streams in database db_1 to role reader_db_1;
 
+--The _temp schema is useful for readers so they can create temporary tables
 use role owner_db_1;
 create schema db_1._temp;
 grant create table on schema db_1._temp to role reader_db_1;
